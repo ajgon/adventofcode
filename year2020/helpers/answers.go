@@ -7,11 +7,16 @@ type DayAnswers struct {
 
 type AllAnswers struct {
 	Day01 DayAnswers
+	Day02 DayAnswers
 }
 
 var Answers AllAnswers = AllAnswers{
 	Day01: DayAnswers{
 		Simple:   "927684",
 		Advanced: "292093004",
+	},
+	Day02: DayAnswers{
+		Simple:   "416",
+		Advanced: "688",
 	},
 }
