@@ -40,3 +40,12 @@ func ProcessInput(file_path string, separators ...string) ([]string, error) {
 
 	return strings.Split(strings.TrimSpace(string(result)), separator), nil
 }
+
+func ArrayContains(stack []string, needle string) bool {
+	for _, item := range stack {
+		if item == needle {
+			return true
+		}
+	}
+	return false
+}
