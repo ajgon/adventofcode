@@ -12,6 +12,7 @@ type AllAnswers struct {
 	Day04 DayAnswers
 	Day05 DayAnswers
 	Day06 DayAnswers
+	Day07 DayAnswers
 }
 
 var Answers AllAnswers = AllAnswers{
@@ -38,5 +39,9 @@ var Answers AllAnswers = AllAnswers{
 	Day06: DayAnswers{
 		Simple:   "6799",
 		Advanced: "3354",
+	},
+	Day07: DayAnswers{
+		Simple:   "124",
+		Advanced: "34862",
 	},
 }
