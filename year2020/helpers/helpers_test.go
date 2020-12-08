@@ -14,8 +14,17 @@ func TestProcessInput(t *testing.T) {
 	}
 }
 
-func TestArrayContainsSuccess(t *testing.T) {
-	got1, got2 := ArrayContains([]string{"lorem", "ipsum"}, "ipsum"), ArrayContains([]string{"lorem", "ipsum"}, "x")
+func TestArrayContainsStr(t *testing.T) {
+	got1, got2 := ArrayContainsStr([]string{"lorem", "ipsum"}, "ipsum"), ArrayContainsStr([]string{"lorem", "ipsum"}, "x")
+	want1, want2 := true, false
+
+	if got1 != want1 || got2 != want2 {
+		t.Errorf("got %t, %t - want %t, %t", got1, got2, want1, want2)
+	}
+}
+
+func TestArrayContainsInt(t *testing.T) {
+	got1, got2 := ArrayContainsInt([]int{4, 2}, 2), ArrayContainsInt([]int{4, 2}, 7)
 	want1, want2 := true, false
 
 	if got1 != want1 || got2 != want2 {

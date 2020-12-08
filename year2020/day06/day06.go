@@ -16,7 +16,7 @@ func simpleCountAnswers(answers string) int {
 		letters := strings.Split(line, "")
 
 		for _, letter := range letters {
-			if !helpers.ArrayContains(rules, letter) {
+			if !helpers.ArrayContainsStr(rules, letter) {
 				rules = append(rules, letter)
 			}
 		}
@@ -34,7 +34,7 @@ func advancedCountAnswers(answers string) int {
 		letters := strings.Split(line, "")
 
 		for _, letter := range letters {
-			if helpers.ArrayContains(rules, letter) {
+			if helpers.ArrayContainsStr(rules, letter) {
 				newRules = append(newRules, letter)
 			}
 		}
