@@ -19,18 +19,8 @@ func containsSum(stack []int, needle int) bool {
 	return false
 }
 
-func convertStringsToNumbers(data []string) []int {
-	var numbers []int
-	for _, item := range data {
-		number, _ := strconv.Atoi(item)
-		numbers = append(numbers, number)
-	}
-
-	return numbers
-}
-
 func findMissingNumber(data []string, preamble int) int {
-	numbers := convertStringsToNumbers(data)
+	numbers := helpers.ConvertStringsToNumbers(data)
 
 	for i := preamble; i < len(data); i++ {
 		chunk := numbers[(i - preamble):i]
@@ -43,7 +33,7 @@ func findMissingNumber(data []string, preamble int) int {
 }
 
 func findEncryptionWeakness(data []string, needle int) int {
-	numbers := convertStringsToNumbers(data)
+	numbers := helpers.ConvertStringsToNumbers(data)
 
 	for size := 2; size < len(numbers); size++ {
 		for i := 0; i < len(numbers)-size; i++ {

@@ -31,3 +31,12 @@ func TestArrayContainsInt(t *testing.T) {
 		t.Errorf("got %t, %t - want %t, %t", got1, got2, want1, want2)
 	}
 }
+
+func TestConvertStringsToNumbers(t *testing.T) {
+	got := ConvertStringsToNumbers([]string{"1", "24", "-13", "7"})
+	want := []int{1, 24, -13, 7}
+
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("got %v, want %v", got, want)
+	}
+}

@@ -4,6 +4,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 )
 
@@ -57,4 +58,14 @@ func ArrayContainsInt(stack []int, needle int) bool {
 		}
 	}
 	return false
+}
+
+func ConvertStringsToNumbers(data []string) []int {
+	var numbers []int
+	for _, item := range data {
+		number, _ := strconv.Atoi(item)
+		numbers = append(numbers, number)
+	}
+
+	return numbers
 }
