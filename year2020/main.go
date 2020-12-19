@@ -21,6 +21,7 @@ import (
 	"year2020/day16"
 	"year2020/day17"
 	"year2020/day18"
+	"year2020/day19"
 
 	"github.com/gookit/color"
 )
@@ -81,6 +82,7 @@ var daysMap = []func() string{
 	day16.SimpleSolution, day16.AdvancedSolution,
 	day17.SimpleSolution, day17.AdvancedSolution,
 	day18.SimpleSolution, day18.AdvancedSolution,
+	day19.SimpleSolution, day19.AdvancedSolution,
 }
 
 func main() {
