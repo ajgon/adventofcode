@@ -40,3 +40,12 @@ func TestConvertStringsToNumbers(t *testing.T) {
 		t.Errorf("got %v, want %v", got, want)
 	}
 }
+
+func TestStringReverse(t *testing.T) {
+	got := StringReverse("lorem ipsum")
+	want := "muspi merol"
+
+	if got != want {
+		t.Errorf("got %s, want %s", got, want)
+	}
+}
