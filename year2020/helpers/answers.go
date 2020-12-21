@@ -26,6 +26,7 @@ type AllAnswers struct {
 	Day18 DayAnswers
 	Day19 DayAnswers
 	Day20 DayAnswers
+	Day21 DayAnswers
 }
 
 var Answers AllAnswers = AllAnswers{
@@ -108,5 +109,9 @@ var Answers AllAnswers = AllAnswers{
 	Day20: DayAnswers{
 		Simple:   "140656720229539",
 		Advanced: "1885",
+	},
+	Day21: DayAnswers{
+		Simple:   "2493",
+		Advanced: "kqv,jxx,zzt,dklgl,pmvfzk,tsnkknk,qdlpbt,tlgrhdh",
 	},
 }

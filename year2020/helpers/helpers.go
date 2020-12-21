@@ -60,6 +60,30 @@ func ArrayContainsInt(stack []int, needle int) bool {
 	return false
 }
 
+func ArrayIntersectStr(left []string, right []string) (result []string) {
+	result = make([]string, 0)
+
+	for l := 0; l < len(left); l++ {
+		if ArrayContainsStr(right, left[l]) {
+			result = append(result, left[l])
+		}
+	}
+
+	return
+}
+
+func ArrayExceptStr(left []string, right []string) (result []string) {
+	result = make([]string, 0)
+
+	for l := 0; l < len(left); l++ {
+		if !ArrayContainsStr(right, left[l]) {
+			result = append(result, left[l])
+		}
+	}
+
+	return
+}
+
 func ConvertStringsToNumbers(data []string) []int {
 	var numbers []int
 	for _, item := range data {
