@@ -84,6 +84,24 @@ func ArrayExceptStr(left []string, right []string) (result []string) {
 	return
 }
 
+func ArrayMaxInt(stack []int) (max int) {
+	max = stack[0]
+
+	for i := 0; i < len(stack); i++ {
+		if stack[i] > max {
+			max = stack[i]
+		}
+	}
+	return
+}
+
+func ArrayShiftInt(stack *[]int) int {
+	top := (*stack)[0]
+	*stack = (*stack)[1:len(*stack)]
+
+	return top
+}
+
 func ConvertStringsToNumbers(data []string) []int {
 	var numbers []int
 	for _, item := range data {

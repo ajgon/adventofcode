@@ -50,6 +50,26 @@ func TestArrayExceptStr(t *testing.T) {
 	}
 }
 
+func TestArrayMaxInt(t *testing.T) {
+	got1, got2 := ArrayMaxInt([]int{-3, -1, -5}), ArrayMaxInt([]int{1, 5, 3})
+	want1, want2 := -1, 5
+
+	if got1 != want1 || got2 != want2 {
+		t.Errorf("got %d/%d, want %d/%d", got1, got2, want1, want2)
+	}
+}
+
+func TestArrayShiftInt(t *testing.T) {
+	input := []int{5, 8, 3, 2}
+
+	gotItem, gotArray := ArrayShiftInt(&input), input
+	wantItem, wantArray := 5, []int{8, 3, 2}
+
+	if gotItem != wantItem || !reflect.DeepEqual(gotArray, wantArray) {
+		t.Errorf("got %v/%v, want %v/%v", gotItem, gotArray, wantItem, wantArray)
+	}
+}
+
 func TestConvertStringsToNumbers(t *testing.T) {
 	got := ConvertStringsToNumbers([]string{"1", "24", "-13", "7"})
 	want := []int{1, 24, -13, 7}
