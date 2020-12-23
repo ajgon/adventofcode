@@ -102,6 +102,16 @@ func ArrayShiftInt(stack *[]int) int {
 	return top
 }
 
+func ArrayIndexOfInt(stack []int, needle int) int {
+	for i := 0; i < len(stack); i++ {
+		if stack[i] == needle {
+			return i
+		}
+	}
+
+	return -1
+}
+
 func ConvertStringsToNumbers(data []string) []int {
 	var numbers []int
 	for _, item := range data {
