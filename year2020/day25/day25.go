@@ -29,8 +29,6 @@ func findLoopSize(target, subject int) (loop int) {
 		loop += 1
 		rotation = rotate(rotation, subject)
 	}
-
-	return -1
 }
 
 func findEncrypionKey(publicKey, loop int) (encryptionKey int) {

@@ -52,8 +52,8 @@ func playRecursiveRound(deckA, deckB []int) ([]int, []int) {
 	cardA := deckA[0]
 	cardB := deckB[0]
 
-	smallDeckA := deckA[1:len(deckA)]
-	smallDeckB := deckB[1:len(deckB)]
+	smallDeckA := deckA[1:]
+	smallDeckB := deckB[1:]
 
 	if cardA <= len(smallDeckA) && cardB <= len(smallDeckB) {
 		smallDeckAClone := make([]int, len(smallDeckA))
@@ -113,7 +113,7 @@ func includesDeckSet(stack [][][]int, deckA []int, deckB []int) bool {
 }
 
 func playGame(deckA, deckB []int, playFunc func([]int, []int) ([]int, []int)) ([]int, rune) {
-	winningDeck := make([]int, 0)
+	var winningDeck []int
 	winner := ' '
 	rounds := make([][][]int, 0)
 

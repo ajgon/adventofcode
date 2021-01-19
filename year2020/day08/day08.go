@@ -67,7 +67,7 @@ func SimpleSolution() string {
 func AdvancedSolution() string {
 	cpu := CPU{pc: 0, acc: 0}
 
-	for index, _ := range input {
+	for index := range input {
 		cpu.Reset()
 		alteredInput := make([]string, len(input))
 		copy(alteredInput, input)

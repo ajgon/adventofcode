@@ -10,7 +10,7 @@ import (
 var input, _ = helpers.ProcessInput("day18.input")
 
 func calculateSumsOnly(equation string) string {
-	re := regexp.MustCompile("(?:[0-9]+ \\+ )+[0-9]+")
+	re := regexp.MustCompile(`(?:[0-9]+ \+ )+[0-9]+`)
 
 	return re.ReplaceAllStringFunc(equation, calculateSimple)
 }
@@ -55,10 +55,10 @@ func calculateAdvanced(equation string) string {
 }
 
 func calculateInBrackets(equation string, calculator func(string) string) (result int) {
-	re := regexp.MustCompile("\\([^()]+\\)")
+	re := regexp.MustCompile(`\([^()]+\)`)
 
 	for {
-		if strings.Index(equation, "(") == -1 {
+		if !strings.Contains(equation, "(") {
 			break
 		}
 		equation = re.ReplaceAllStringFunc(equation, calculator)

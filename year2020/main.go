@@ -32,10 +32,6 @@ import (
 	"github.com/gookit/color"
 )
 
-var allAnswersDuration int64 = 0
-
-const solvedDays = 14
-
 func printAnswer(day, variant string, answer string, answerDuration time.Duration) {
 	var colonText string
 	textColor := color.FgBlue.Render
@@ -57,7 +53,7 @@ func printAnswer(day, variant string, answer string, answerDuration time.Duratio
 		textColor(" "),
 		variantColor("("+variant+")"),
 		textColor(colonText),
-		answerColor(fmt.Sprintf("%s", answer)),
+		answerColor(answer),
 		timeColor(fmt.Sprintf(" (%v)", answerDuration)),
 	)
 }

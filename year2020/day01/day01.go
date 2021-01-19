@@ -22,7 +22,7 @@ func findNEntriesWithSum(n uint8, expectedSum uint16) ([]uint16, error) {
 
 	positions := make([]uint8, n-1)
 
-	for alter := false; alter == false; {
+	for alter := false; !alter; {
 		alter = true
 		for p := 0; p < len(positions); p++ {
 			for i := 0; i < len(numbers); i++ {

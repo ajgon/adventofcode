@@ -28,14 +28,13 @@ func extractRulesAndCandidates(data []string) (rules []string, candidates []stri
 
 func normalizeRules(ruleset []string) string {
 	lettersOnlyRegex := regexp.MustCompile("^([0-9]+): \"?([^0-9\"]+)\"? +$")
-	canBreak := true
 
 	for i := 0; i < len(ruleset); i++ {
 		ruleset[i] = ruleset[i] + " "
 	}
 
 	for {
-		canBreak = true
+		canBreak := true
 		for i := 0; i < len(ruleset); i++ {
 			matches := lettersOnlyRegex.FindStringSubmatch(ruleset[i])
 			if len(matches) > 0 {

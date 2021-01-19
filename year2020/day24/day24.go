@@ -79,7 +79,7 @@ func evolveTiles(grid map[int]map[int]bool) map[int]map[int]bool {
 	var maxX, maxY float64 = 0, 0
 
 	for x, sub := range grid {
-		for y, _ := range sub {
+		for y := range sub {
 			absX := math.Abs(float64(x))
 			absY := math.Abs(float64(y))
 			if absX > maxX {

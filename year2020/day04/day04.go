@@ -39,7 +39,7 @@ func simpleValidatePassport(data string) bool {
 	t := v.Type()
 
 	for i := 0; i < v.NumField(); i++ {
-		valid = valid && (strings.Index(data, fmt.Sprintf("%s:", strings.ToLower(t.Field(i).Name))) != -1)
+		valid = valid && (strings.Contains(data, fmt.Sprintf("%s:", strings.ToLower(t.Field(i).Name))))
 	}
 
 	return valid

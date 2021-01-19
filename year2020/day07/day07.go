@@ -28,7 +28,7 @@ func getParentBags(data []string, bags []Bags) []Bags {
 
 	for _, row := range data {
 		for _, bag := range bags {
-			if strings.Index(row, bag.color) != -1 {
+			if strings.Contains(row, bag.color) {
 				bagColor := strings.Join(strings.Split(row, " ")[0:2], " ")
 				if bagColor != bag.color && !bagsContain(results, bagColor) {
 					results = append(results, Bags{count: 1, color: bagColor})

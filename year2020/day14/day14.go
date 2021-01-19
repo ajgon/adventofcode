@@ -27,7 +27,7 @@ func replaceFloating(combinations []string) []string {
 	results := make([]string, 0)
 	for _, combination := range combinations {
 		parsedResults := make([]string, 0)
-		if strings.Index(combination, "X") != -1 {
+		if strings.Contains(combination, "X") {
 			parsedResults = append(parsedResults, strings.Replace(combination, "X", "0", 1))
 			parsedResults = append(parsedResults, strings.Replace(combination, "X", "1", 1))
 
@@ -70,8 +70,8 @@ func applyFloatingMask(value int, mask string) []int {
 }
 
 func processProgram(data []string, version int) map[int]int {
-	var memory map[int]int = make(map[int]int, 0)
-	memRegex := regexp.MustCompile("mem\\[([0-9]+)\\] = ([0-9]+)")
+	var memory map[int]int = make(map[int]int)
+	memRegex := regexp.MustCompile(`mem\[([0-9]+)\] = ([0-9]+)`)
 	mask := fmt.Sprintf("%036s", "0")
 
 	for _, instruction := range data {
