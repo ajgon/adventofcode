@@ -1,0 +1,10 @@
+---
+linters:
+  disable:
+    - gofumpt
+    - goimports
+    - golint
+    - gomoddirectives
+    - interfacer
+    - maligned
+    - scopelint

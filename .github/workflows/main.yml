@@ -5,8 +5,8 @@ on:
       - master
   pull_request:
 jobs:
-  golangci:
-    name: lint
+  golangci2020:
+    name: lint year 2020
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,8 +15,18 @@ jobs:
         with:
           version: v1.29
           working-directory: year2020
-  gotest:
-    name: test
+  golangci2021:
+    name: lint year 2021
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v2
+        with:
+          version: v1.41.1
+          working-directory: year2021
+  gotest2020:
+    name: test year 2020
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -34,4 +44,24 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+  gotest2021:
+    name: test year 2021
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: year2021
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.17
+
+    - name: Build
+      run: go build -v ./...
+
+    - name: Test
+      run: go test -v ./...
+
 
