@@ -6,6 +6,7 @@ import (
 
 	"github.com/gookit/color"
 	"year2021/day01"
+	"year2021/day02"
 )
 
 func printAnswer(day, variant string, answer string, answerDuration time.Duration) {
@@ -45,6 +46,7 @@ func handleAnswer(answerCall func() string, answerChan chan string, durationChan
 func main() {
 	daysMap := []func() string{
 		day01.SimpleSolution, day01.AdvancedSolution,
+		day02.SimpleSolution, day02.AdvancedSolution,
 	}
 
 	start := time.Now()
